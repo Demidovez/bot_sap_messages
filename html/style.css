@@ -1,0 +1,193 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  height: 1280px;
+  width: 1280px;
+  background: gray;
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+}
+
+p {
+  margin: 0;
+}
+
+.hide {
+  display: none !important;
+}
+
+.info-line {
+  color: gray;
+  display: block;
+  font-size: 25px;
+  line-height: 40px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: stretch;
+  padding: 30px;
+  height: 100%;
+  width: 100%;
+  background: #f6fbff;
+  box-sizing: border-box;
+}
+
+.top-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: stretch;
+}
+
+.desc-wrapper {
+  order: 0;
+  flex: 2 1;
+  align-self: auto;
+}
+
+.desc-wrapper {
+  order: 0;
+  flex: 1 1;
+  align-self: auto;
+  font-size: 30px;
+}
+
+.desc-wrapper .status {
+  font-size: 38px;
+  font-weight: 300;
+  margin-top: -30px;
+}
+
+.desc-wrapper .status img {
+  width: 110px;
+  height: 110px;
+  margin: 30px 20px 30px 0;
+  vertical-align: middle;
+}
+
+.desc-wrapper .status span {
+  font-weight: 600;
+}
+
+.desc-wrapper .type span,
+.desc-wrapper .location span,
+.desc-wrapper .equipment span {
+  font-weight: 600;
+}
+
+.desc-wrapper .type img,
+.desc-wrapper .location img,
+.desc-wrapper .equipment img {
+  width: 40px;
+  height: 40px;
+  margin: 4px 10px 7px 0px;
+  vertical-align: middle;
+}
+
+.desc-wrapper .location,
+.desc-wrapper .equipment,
+.planner-wrapper > p {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.desc-wrapper .location > span,
+.desc-wrapper .equipment > span,
+.planner-wrapper > p > span {
+  font-weight: inherit;
+}
+
+.date-wrapper p {
+  font-size: 27px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.date-wrapper span {
+  font-weight: 600;
+}
+
+.date-wrapper img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.middle-content {
+  order: 0;
+  flex: 1 1 auto;
+  align-self: auto;
+}
+
+.middle-content .title {
+  margin: 10px 0 30px 0;
+  font-weight: 600;
+  font-size: 40px;
+  font-family: "Roboto Slab", serif;
+}
+
+.middle-content .desc {
+  font-size: 40px;
+  line-height: 55px;
+}
+
+.bottom-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: center;
+  font-size: 30px;
+}
+
+.divider {
+  background-color: #e2e2e2;
+  width: 2px;
+  height: 70%;
+  margin: 0 10px;
+}
+
+.planner-wrapper img {
+  width: 50px;
+  height: 50px;
+  margin: 10px 20px 10px 0;
+  vertical-align: middle;
+}
+
+.planner-wrapper span {
+  font-weight: 600;
+}
+
+.author-wrapper img {
+  width: 50px;
+  height: 50px;
+  margin: 10px 10px 10px 0;
+  vertical-align: middle;
+}
+
+.author-wrapper span {
+  font-weight: 600;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+}
+
+.date img {
+  margin-right: 18px;
+}
+
+.date > span {
+  font-weight: inherit;
+}
