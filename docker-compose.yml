@@ -1,9 +1,11 @@
 version: '3'
 services:
-  bot_sap_messages:
+  bot_sap_messages_image:
+    image: bot_sap_messages_image
     build:
         context: .
     ports:
       - 5010:5010
     volumes:
       - ./src:/home/node/app/src
+    container_name: bot_sap_messages  
