@@ -58,7 +58,7 @@ bot.use(stage.middleware());
 bot.on("message", (ctx) => {
   bot.telegram.sendMessage(
     321438949,
-    "Сообщение от " + ctx.message.from.id + ":: " + ctx.message.text
+    "Сообщение от " + ctx.message.from.id + ": " + ctx.message.text
   );
 });
 
