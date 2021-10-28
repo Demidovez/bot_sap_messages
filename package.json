@@ -11,10 +11,14 @@
     "express": "^4.17.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
+    "nodemon": "^2.0.14",
     "puppeteer": "^8.0.0",
     "sequelize": "^6.3.5",
     "telegraf": "^3.38.0",
     "xmlhttprequest": "^1.8.0"
+  },
+  "scripts": {
+    "start": "nodemon ./src"
   },
   "devDependencies": {
     "prettier": "^2.2.1"

@@ -1,0 +1,9 @@
+version: '3'
+services:
+  bot_sap_messages:
+    build:
+        context: .
+    ports:
+      - 5010:5010
+    volumes:
+      - ./src:/home/node/app/src
