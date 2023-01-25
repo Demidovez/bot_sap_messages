@@ -1,5 +1,5 @@
 FROM node:17.5.0-alpine
-WORKDIR /usr/app
+WORKDIR /usr/modules
 COPY package*.json ./
 
 EXPOSE 5010
@@ -30,7 +30,10 @@ RUN addgroup -S pptruser && adduser -S -g pptruser pptruser \
 RUN apk add --no-cache msttcorefonts-installer fontconfig
 RUN update-ms-fonts
 
-RUN npm install
 ENV TZ Europe/Minsk
-COPY . .
+RUN npm install
+ENV NODE_PATH /usr/modules/node_modules/
+
+WORKDIR /usr/app
+
 ENTRYPOINT [ "node", "index.js" ]

@@ -157,7 +157,7 @@ class Helper {
       "[[MODIFIER]]": AENAM,
       "[[IS_HIDE_FILES]]": MY_COUNT_ATTACH ? "" : "hide",
       "[[FILES]]": MY_COUNT_ATTACH,
-      "[[BIG_DESC]]": desc.length > 750 ? "big_desc" : ""
+      "[[BIG_DESC]]": desc.length > 1000 ? "veri_big_desc" : desc.length > 750 ? "big_desc" : ""
     };
 
     for (const field in listToReplace) {

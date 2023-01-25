@@ -8,5 +8,6 @@ services:
     volumes:
       - /etc/timezone:/etc/timezone
       - /etc/localtime:/etc/localtime
+      - ./:/usr/app
     ports:
       - 5010:5010

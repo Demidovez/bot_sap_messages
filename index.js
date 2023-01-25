@@ -62,7 +62,7 @@ app.post("/event_sap", async (req, res) => {
 // Устанавливаем порт, и слушаем запросы
 app
   .listen(5010, () => {
-    console.log("Сервер запущен на 5010 порту");
+    console.log("Сервер запущен на 5010 порту...");
   })
   .on("error", (e) => {
     console.error(e.message);

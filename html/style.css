@@ -196,3 +196,9 @@ p {
   font-size: 25px !important;
   line-height: 30px !important;
 }
+
+.veri_big_desc,
+.veri_big_desc .info-line {
+  font-size: 20px !important;
+  line-height: 25px !important;
+}
