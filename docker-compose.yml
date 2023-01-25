@@ -1,11 +1,12 @@
-version: '3'
+version: "3.3"
 services:
-  bot_sap_messages_image:
-    image: bot_sap_messages_image
-    build:
-        context: .
+  toro_notify_bot:
+    build: .
+    restart: unless-stopped
+    image: toro_notify_bot
+    container_name: ToroNotifyBot
+    volumes:
+      - /etc/timezone:/etc/timezone
+      - /etc/localtime:/etc/localtime
     ports:
       - 5010:5010
-    volumes:
-      - ./src:/home/node/app/src
-    container_name: bot_sap_messages  

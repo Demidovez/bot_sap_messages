@@ -1,11 +1,36 @@
-FROM node:slim
-
-WORKDIR /home/node/app
-
+FROM node:17.5.0-alpine
+WORKDIR /usr/app
 COPY package*.json ./
-
-RUN npm install
 
 EXPOSE 5010
 
-CMD [ "npm", "run", "start" ]
+# Installs latest Chromium (92) package.
+RUN apk add --no-cache \
+      chromium \
+      nss \
+      freetype \
+      harfbuzz \
+      ca-certificates \
+      ttf-freefont \
+      nodejs 
+
+# Tell Puppeteer to skip installing Chrome. We'll be using the installed package.
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
+    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+
+# Puppeteer v10.0.0 works with Chromium 92.
+# RUN npm install puppeteer@10.0.0
+
+# Add user so we don't need --no-sandbox.
+RUN addgroup -S pptruser && adduser -S -g pptruser pptruser \
+    && mkdir -p /home/pptruser/Downloads /app \
+    && chown -R pptruser:pptruser /home/pptruser \
+    && chown -R pptruser:pptruser /app 
+
+RUN apk add --no-cache msttcorefonts-installer fontconfig
+RUN update-ms-fonts
+
+RUN npm install
+ENV TZ Europe/Minsk
+COPY . .
+ENTRYPOINT [ "node", "index.js" ]

@@ -191,3 +191,8 @@ p {
 .date > span {
   font-weight: inherit;
 }
+
+.big_desc {
+  font-size: 25px !important;
+  line-height: 30px !important;
+}

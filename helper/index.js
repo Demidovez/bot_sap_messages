@@ -123,6 +123,8 @@ class Helper {
     const [MY_GEWERK, MY_GEWDESC] = ARBPL ? await db.getGewerkInfo(ARBPL) : "";
     const MY_COUNT_ATTACH = await db.getCountAttaches(QMNUM);
 
+    const desc = this.correctDescNotifi(LXTX)
+
     const listToReplace = {
       "[[ICON_NOTIFI]]": this.getNotifyIcon(PHASE, PHASE_OLD),
       "[[NOTIFI]]": this.getNotifyStatus(PHASE, PHASE_OLD),
@@ -143,7 +145,7 @@ class Helper {
       "[[DATE_MODIFY]]": this.correctDate(BEZDT, BEZUR),
       "[[TITLE]]": QMTXT,
       "[[IS_HIDE_DESC]]": LXTX ? "" : "hide",
-      "[[DESC]]": this.correctDescNotifi(LXTX),
+      "[[DESC]]": desc,
       "[[PLANNER_CODE]]": INGRP,
       "[[PLANNER_TITLE]]": MY_INDESC,
       "[[WORKERS_CODE]]": MY_GEWERK,
@@ -155,6 +157,7 @@ class Helper {
       "[[MODIFIER]]": AENAM,
       "[[IS_HIDE_FILES]]": MY_COUNT_ATTACH ? "" : "hide",
       "[[FILES]]": MY_COUNT_ATTACH,
+      "[[BIG_DESC]]": desc.length > 750 ? "big_desc" : ""
     };
 
     for (const field in listToReplace) {

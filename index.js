@@ -33,28 +33,6 @@ const stage = new Stage([notifyScene, signIn]);
 bot.use(session());
 bot.use(stage.middleware());
 
-// Принимаем запросы в боте от пользователя
-//bot.use(async (ctx, next) => {
-//  ctx.scene.enter("NotifyScene");
-//  next();
-//});
-
-//bot.on("message", async (ctx) => {
-//  await Helper.fillTamplateHtml("111111");
-//  HelperBot.sendPhoto(bot);
-//});
-
-// При каждом нажатии на кнопку происходит проверка на доступ
-// bot.use(async (ctx, next) => {
-//   await Helper.checkUser(ctx.message.from).then(({ isHaveAccess }) => {
-//     if (isHaveAccess) {
-//       ctx.scene.enter("NotifyScene");
-//     } else {
-//       ctx.scene.enter("SignIn");
-//     }
-//   });
-// });
-
 bot.on("message", (ctx) => {
   bot.telegram.sendMessage(
     321438949,
